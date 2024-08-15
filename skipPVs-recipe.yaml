@@ -1,0 +1,22 @@
+apiVersion: spp-data-protection.isf.ibm.com/v1alpha1
+kind: Recipe
+metadata:
+  name: skip-pv-recipe
+  namespace: ${NAMESPACE}
+spec:
+  appType: ocpapp-skip-pv
+  groups:
+    - name: namespace-resources
+      type: resource
+    - name: storage-resources
+      type: volume     
+      labelSelector: fusion-label!=skip_me        
+  workflows:
+    - name: backup
+      sequence:
+        - group: namespace-resources
+        - group: storage-resources
+    - name: restore
+      sequence:
+        - group: storage-resources
+        - group: namespace-resources
