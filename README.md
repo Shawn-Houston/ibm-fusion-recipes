@@ -4,4 +4,4 @@ Some IBM Fusion B&R recipes
 
 # Recipes
 
-- Skip Labeled PVCs _skipPVs-recipe.yaml_
+- Skip Labeled PVCs: _skipPVs-recipe.yaml_
