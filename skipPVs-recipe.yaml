@@ -10,7 +10,7 @@ spec:
       type: resource
     - name: storage-resources
       type: volume     
-      labelSelector: fusion-label!=skip_me        
+      labelSelector: fusion-label!=do-not-backup        
   workflows:
     - name: backup
       sequence:
